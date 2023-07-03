@@ -13,6 +13,9 @@ public class FixedCapacityStackOfStrings {
   // saving the item, and incrementing the size
   public void push(String item) { s[N++] = item; }
 
-  // pops the most recent item from the stack by decrementing the size and indexing into the array
-  public String pop() { return s[--N]; }
+  public String pop() { 
+    String item = s[--N]; // decrement the size of the array and use the new size to index into the array, storing the last item in the array
+    s[N] = null; // remove the last item by changing its value to null so that the garbage collect can reclaim memory
+    return item; // returned the previously stored last item
+  }
 }
