@@ -1,11 +1,13 @@
 public class LinkedStackOfStrings
 {
-    // Constructor
-    private Node first = null; // initialize the first item in the stack to point to null
+    public LinkedStackOfStrings() {
+        // Constructor
+        private Node first = null; // initialize the first item in the stack to point to null
 
-    private class Node {
-        String item;
-        Node next;
+        private class Node {
+	    String item;
+	    Node next;
+        }
     }
 	
     // method returns whether the stack is empty by checking whether the first item is null
