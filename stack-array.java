@@ -22,7 +22,8 @@ public class ResizingArrayStackOfStrings {
   
   public String pop() { 
     String item = s[--N]; // decrement the size of the array and use the new size to index into the array, storing the last item in the array
-    s[N] = null; // remove the last item by changing its value to null so that the garbage collect can reclaim memory
+    s[N] = null; // remove the last item by changing its value to null so that the garbage collector can reclaim memory
+    if (N > 0 && N == s.length/4) resize(s.length/2); // if the stack is not empty and the size of the stack is one-quarter of the size of the array, halve the size of the array
     return item; // returned the previously stored last item
   }
 }
